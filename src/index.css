@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 26% 14%;
+    --foreground: 0 0% 100%;
+
+    --card: 219 24% 20%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 219 24% 20%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 219 24% 26%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 219 24% 26%;
+    --muted-foreground: 218 11% 82%;
+
+    --accent: 219 24% 30%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 43 96% 56%;
+    --warning-foreground: 220 26% 14%;
+
+    --border: 219 24% 28%;
+    --input: 219 24% 28%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 26% 11%;
+    --sidebar-foreground: 218 11% 82%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 219 24% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 219 24% 22%;
+    --sidebar-ring: 217 91% 60%;
+
+    --chart-1: 217 91% 60%;
+    --chart-2: 160 84% 39%;
+    --chart-3: 43 96% 56%;
+    --chart-4: 270 60% 60%;
+    --chart-5: 0 84% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border rounded-lg;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.15);
+  }
+
+  .privacy-badge-verified {
+    @apply bg-emerald-500/10 text-emerald-400 border border-emerald-500/30;
+  }
+
+  .privacy-badge-pending {
+    @apply bg-yellow-500/10 text-yellow-400 border border-yellow-500/30;
+  }
+
+  .privacy-badge-failed {
+    @apply bg-red-500/10 text-red-400 border border-red-500/30;
+  }
+
+  .log-info {
+    @apply text-blue-400;
+  }
+
+  .log-warning {
+    @apply text-yellow-400;
+  }
+
+  .log-error {
+    @apply text-red-400;
+  }
+}
+
+@keyframes symbol-pulse {
+  0%, 100% {
+    text-shadow: 0 0 0px hsl(217 91% 60% / 0);
+    opacity: 0.15;
+  }
+  50% {
+    text-shadow: 0 0 10px hsl(217 91% 60% / 0.5);
+    opacity: 0.3;
+  }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(0) scale(1); opacity: 0.1; }
+  50% { opacity: 0.4; }
+  100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+}
+
+@keyframes float-down {
+  0% { transform: translateY(0) scale(1); opacity: 0.1; }
+  50% { opacity: 0.4; }
+  100% { transform: translateY(100px) scale(1.2); opacity: 0; }
+}
+
+@keyframes float-left {
+  0% { transform: translateX(0) scale(1); opacity: 0.1; }
+  50% { opacity: 0.4; }
+  100% { transform: translateX(-100px) scale(1.2); opacity: 0; }
+}
+
+@keyframes float-right {
+  0% { transform: translateX(0) scale(1); opacity: 0.1; }
+  50% { opacity: 0.4; }
+  100% { transform: translateX(100px) scale(1.2); opacity: 0; }
+}

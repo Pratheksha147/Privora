@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+pandas
+numpy
+pymongo
+python-dotenv
+reportlab
+pdfplumber
+ollama
+langgraph
+langchain
